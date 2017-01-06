@@ -1,0 +1,1 @@
+Documentation maintained only in polish language [ENG]
