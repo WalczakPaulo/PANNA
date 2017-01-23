@@ -1,54 +1,38 @@
 package application;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.SplitPane;
+import javafx.stage.Stage;
 
 /**
  * Created by Antoni Rozanski on 21.01.2017.
  */
-class Main
+public
+class Main extends Application
 {
-	private static final SessionFactory ourSessionFactory;
+	public static void main(String[] args)
+	{
+		launch(args);
+	}
 
-	static
+	@Override
+	public void start(Stage primaryStage)
 	{
 		try
 		{
-			Configuration configuration = new Configuration();
-			configuration.configure();
+			SplitPane root;
+			root = FXMLLoader.load(this.getClass().getResource("/view/loginPane.fxml"));
 
-			ourSessionFactory = configuration.buildSessionFactory();
-
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("Panna Football App");
+			primaryStage.show();
 		}
-		catch (Throwable ex)
+		catch (Exception e)
 		{
-			throw new ExceptionInInitializerError(ex);
+			e.printStackTrace();
 		}
-	}
-
-	public static void main(final String[] args) throws Exception
-	{
-		final Session session = getSession();
-		try
-		{
-			final String entityName = "CountriesEntity";
-			final Query query = session.createQuery("from " + entityName);
-			System.out.println("executing: " + query.getQueryString());
-			for (Object o : query.list())
-			{
-				System.out.println("  " + o);
-			}
-		} finally
-		{
-			session.close();
-		}
-	}
-
-	private static Session getSession() throws HibernateException
-	{
-		return ourSessionFactory.openSession();
 	}
 }
