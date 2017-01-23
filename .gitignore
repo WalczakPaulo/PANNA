@@ -10,7 +10,7 @@
 /out
 .externalNativeBuild
 *.class
-
+Antek.xml
 # BlueJ files
 *.ctxt
 

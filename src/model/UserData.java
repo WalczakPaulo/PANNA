@@ -3,17 +3,14 @@ package model;
 /**
  * Created by Antoni Rozanski on 23.01.2017.
  */
-public class UserData
+public abstract class UserData
 {
-	boolean isFullVersion;
+	String login;
 
-	public boolean isFullVersion()
+	public UserData(String login)
 	{
-		return isFullVersion;
+		this.login = login;
 	}
 
-	public void setFullVersion(boolean fullVersion)
-	{
-		isFullVersion = fullVersion;
-	}
+	public abstract boolean isFullVersion();
 }
