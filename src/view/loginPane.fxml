@@ -22,12 +22,12 @@
         </AnchorPane>
         <AnchorPane>
             <children>
+                <TextField fx:id="loginField" layoutX="14.0" layoutY="38.0"
+                           promptText="Enter login here"/>
                 <PasswordField fx:id="passwordField" layoutX="14.0" layoutY="88.0"
                                promptText="Enter password here"/>
                 <Button fx:id="signButton" layoutX="115.0" layoutY="279.0" mnemonicParsing="false"
-                        onAction="#trySignIntoApp" text="Sign in"/>
-                <TextField fx:id="loginField" layoutX="14.0" layoutY="38.0"
-                           promptText="Enter login here"/>
+                        onAction="#trySignIntoApp" text="Sign in    "/>
                 <Label layoutX="22.0" layoutY="71.0" text="Password"/>
                 <Label layoutX="22.0" layoutY="21.0" text="Login:"/>
                 <Text layoutX="24.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0"

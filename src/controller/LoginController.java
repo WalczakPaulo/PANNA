@@ -43,6 +43,8 @@ public class LoginController implements Initializable
 		{
 			UserData data = validator.tryValidate(loginField.getText(), passwordField.getText());
 			openAppForUser(data);
+			closeLoginWindow();
+
 		}
 		catch (PannaLoginException ex)
 		{
@@ -50,12 +52,18 @@ public class LoginController implements Initializable
 		}
 	}
 
+	private void closeLoginWindow()
+	{
+		Stage stage = (Stage) loginField.getScene().getWindow();
+		stage.close();
+	}
+
 	private void openAppForUser(UserData data)
 	{
 
 		try
 		{
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/clubsPane.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/clubsPane.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 
