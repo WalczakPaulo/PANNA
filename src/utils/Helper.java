@@ -24,7 +24,7 @@ public class Helper
 		alert.showAndWait();
 	}
 
-	public static void showDefaultExceptionAlertDialog(Exception e)
+	public static void showDefaultExceptionAlertDialog(Throwable e)
 	{
 		Alert alert = new Alert(Alert.AlertType.ERROR);
 
@@ -36,7 +36,7 @@ public class Helper
 
 	}
 
-	private static Node prepareExpandableTextField(Exception e)
+	private static Node prepareExpandableTextField(Throwable e)
 	{
 		TextArea textArea = new TextArea(prepareStackTraceString(e));
 		textArea.setEditable(false);
@@ -51,7 +51,7 @@ public class Helper
 		return gp;
 	}
 
-	private static String prepareStackTraceString(Exception e)
+	private static String prepareStackTraceString(Throwable e)
 	{
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);

@@ -18,6 +18,7 @@ import model.UserData;
 import utils.Constants;
 import utils.Helper;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -50,6 +51,10 @@ public class LoginController implements Initializable
 		{
 			Helper.showExceptionAlertDialog(ex, Constants.LOGIN_FAILED_EXCEPTION_TITLE);
 		}
+		catch (Throwable e)
+		{
+			Helper.showDefaultExceptionAlertDialog(e);
+		}
 	}
 
 	private void closeLoginWindow()
@@ -58,22 +63,15 @@ public class LoginController implements Initializable
 		stage.close();
 	}
 
-	private void openAppForUser(UserData data)
+	private void openAppForUser(UserData data) throws IOException
 	{
 
-		try
-		{
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/clubsPane.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 
 			stage.setScene(new Scene(root));
 			stage.show();
-		}
-		catch (Exception e)
-		{
-			Helper.showDefaultExceptionAlertDialog(e);
-		}
 	}
 
 	@Override
