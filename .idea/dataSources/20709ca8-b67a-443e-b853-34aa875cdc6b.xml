@@ -4,9 +4,9 @@
     <root id="1"/>
     <schema id="2" parent="1" name="SYSTEM">
       <ObjectId>5</ObjectId>
-      <IntrospectionTimestamp>2017-01-23.15:54:24</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-01-25.00:31:31</IntrospectionTimestamp>
       <CreatedTimestamp>2010-03-30.10:08:01</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-23.09:33:59</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
       <CommentsHash>2549628204669084</CommentsHash>
       <Current>1</Current>
       <Visible>1</Visible>
@@ -120,34 +120,34 @@
       <ObjectId>2147483638</ObjectId>
     </schema>
     <sequence id="39" parent="2" name="Addresses_seq">
-      <ObjectId>74633</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:28</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:28</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74820</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:58</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:58</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="40" parent="2" name="Contracts_seq">
-      <ObjectId>74634</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:28</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:28</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74821</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:58</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:58</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="41" parent="2" name="Countries_seq">
-      <ObjectId>74635</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:28</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:28</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74822</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:58</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:58</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="42" parent="2" name="Employees_seq">
-      <ObjectId>74636</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:28</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:28</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74823</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:58</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:58</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="43" parent="2" name="Footbal clubs_seq">
-      <ObjectId>74637</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:28</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:28</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74824</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:58</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:58</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="44" parent="2" name="LOGMNR_EVOLVE_SEQ$">
       <ObjectId>1054</ObjectId>
@@ -187,52 +187,52 @@
       <SequenceIdentity>1..4294967295</SequenceIdentity>
     </sequence>
     <sequence id="49" parent="2" name="Match overviews_seq">
-      <ObjectId>74640</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74827</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="50" parent="2" name="Match types_seq">
-      <ObjectId>74641</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74828</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="51" parent="2" name="Matches_Footbal clubs_seq">
-      <ObjectId>74639</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74826</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="52" parent="2" name="Matches_seq">
-      <ObjectId>74638</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:28</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:28</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74825</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:58</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:58</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="53" parent="2" name="Physiotherapists_seq">
-      <ObjectId>74642</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74829</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="54" parent="2" name="Player participation_seq">
-      <ObjectId>74643</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74830</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="55" parent="2" name="Players_seq">
-      <ObjectId>74644</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74831</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="56" parent="2" name="Positions on pitch_seq">
-      <ObjectId>74645</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74832</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="57" parent="2" name="REPCAT$_EXCEPTIONS_S">
       <ObjectId>7244</ObjectId>
@@ -321,22 +321,22 @@
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="71" parent="2" name="Social media_seq">
-      <ObjectId>74646</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74833</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="72" parent="2" name="Sponsors_seq">
-      <ObjectId>74647</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74834</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="73" parent="2" name="Sport facilities_seq">
-      <ObjectId>74648</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74835</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="74" parent="2" name="TEMPLATE$_TARGETS_S">
       <ObjectId>7236</ObjectId>
@@ -345,10 +345,10 @@
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="75" parent="2" name="Trophies_seq">
-      <ObjectId>74649</ObjectId>
-      <CreatedTimestamp>2017-01-21.13:20:29</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:20:29</ModifiedTimestamp>
-      <SequenceIdentity>0</SequenceIdentity>
+      <ObjectId>74836</ObjectId>
+      <CreatedTimestamp>2017-01-25.00:27:59</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:27:59</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <table id="76" parent="2" name="AQ$_INTERNET_AGENTS">
       <ObjectId>5655</ObjectId>
@@ -461,7 +461,7 @@
     <table id="96" parent="2" name="Footbal clubs">
       <ObjectId>74574</ObjectId>
       <CreatedTimestamp>2017-01-21.13:19:50</CreatedTimestamp>
-      <ModifiedTimestamp>2017-01-21.13:19:52</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-01-25.00:22:14</ModifiedTimestamp>
     </table>
     <table id="97" parent="2" name="HELP">
       <ObjectId>13487</ObjectId>
@@ -2781,7 +2781,7 @@ CATCHUP</ColNames>
     </column>
     <column id="515" parent="96" name="Club Name">
       <Position>2</Position>
-      <DataType>CHAR(60)|0</DataType>
+      <DataType>VARCHAR2(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="516" parent="96" name="Nickname">

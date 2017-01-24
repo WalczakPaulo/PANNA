@@ -1,7 +1,7 @@
 package database.models;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.sql.Date;
 
 /**
  * Created by Antoni Rozanski on 23.01.2017.
@@ -13,7 +13,7 @@ import java.sql.Time;
 	private String nickname;
 	private String coloration;
 	private String siteAddress;
-	private Time creationDate;
+	private Date creationDate;
 	private Long nip;
 	private Long regon;
 	private AddressesEntity addressesByIdAddress;
@@ -80,12 +80,12 @@ import java.sql.Time;
 
 	@Basic
 	@Column(name =  "\"Creation Date\"")
-	public Time getCreationDate()
+	public Date getCreationDate()
 	{
 		return creationDate;
 	}
 
-	public void setCreationDate(Time creationDate)
+	public void setCreationDate(Date creationDate)
 	{
 		this.creationDate = creationDate;
 	}
