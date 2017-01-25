@@ -19,4 +19,6 @@ public class Constants
 	public static final String QUERY_FROM = " from ";
 	public static final String QUERY_WHERE = " where ";
 	public static final String QUERY_LIKE = " like ";
+	public static final String QUERY_ORDER_BY = " order by ";
+	public static final String QUERY_ASC = " asc ";
 }
