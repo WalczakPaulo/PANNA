@@ -9,8 +9,7 @@ import javafx.stage.Stage;
 /**
  * Created by Antoni Rozanski on 21.01.2017.
  */
-public
-class Main extends Application
+public class Main extends Application
 {
 	public static void main(String[] args)
 	{

@@ -4,13 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.CredentialsValidator;
 import model.PannaLoginException;
@@ -66,12 +67,17 @@ public class LoginController implements Initializable
 	private void openAppForUser(UserData data) throws IOException
 	{
 
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/clubsPane.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/mainPane.fxml"));
+		BorderPane root = fxmlLoader.load();
+		Stage stage = new Stage();
 
-			stage.setScene(new Scene(root));
-			stage.show();
+		stage.setScene(new Scene(root));
+
+		SplitPane clubsPane;
+		clubsPane = FXMLLoader.load(this.getClass().getResource("/view/footballClubsPane.fxml"));
+		root.setCenter(clubsPane);
+		stage.setResizable(false);
+		stage.show();
 	}
 
 	@Override
