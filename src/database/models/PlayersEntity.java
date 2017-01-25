@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * Created by Antoni Rozanski on 23.01.2017.
  */
-@Entity @Table(name =  "\"Players\"", schema = "SYSTEM") public class PlayersEntity
+@Entity @Table(name = "\"Players\"", schema = "SYSTEM") public class PlayersEntity
 {
 	private long playerNumber;
 	private long height;
@@ -16,9 +16,22 @@ import javax.persistence.*;
 	private String isCaptain;
 	private Long marketValue;
 	private long idEmployee;
+	private PositionsOnPitchEntity positionsOnPitchByIdPosition;
+
+	@Id
+	@Column(name = "\"ID_Employee\"", nullable = false, precision = 0)
+	public long getIdEmployee()
+	{
+		return idEmployee;
+	}
+
+	public void setIdEmployee(long idEmployee)
+	{
+		this.idEmployee = idEmployee;
+	}
 
 	@Basic
-	@Column(name =  "\"Player_Number\"", nullable = false)
+	@Column(name = "\"Player_Number\"", nullable = false, precision = 0)
 	public long getPlayerNumber()
 	{
 		return playerNumber;
@@ -30,7 +43,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Height\"", nullable = false)
+	@Column(name = "\"Height\"", nullable = false, precision = 0)
 	public long getHeight()
 	{
 		return height;
@@ -42,7 +55,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Accuracy\"")
+	@Column(name = "\"Accuracy\"", nullable = true, precision = 0)
 	public Long getAccuracy()
 	{
 		return accuracy;
@@ -54,7 +67,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Velocity\"")
+	@Column(name = "\"Velocity\"", nullable = true, precision = 0)
 	public Long getVelocity()
 	{
 		return velocity;
@@ -66,7 +79,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Stamina\"")
+	@Column(name = "\"Stamina\"", nullable = true, precision = 0)
 	public Long getStamina()
 	{
 		return stamina;
@@ -78,7 +91,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Is injured\"", length = 1)
+	@Column(name = "\"Is injured\"", length = 1, nullable = true)
 	public String getIsInjured()
 	{
 		return isInjured;
@@ -90,7 +103,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Is captain\"", length = 1)
+	@Column(name = "\"Is captain\"", length = 1, nullable = true)
 	public String getIsCaptain()
 	{
 		return isCaptain;
@@ -102,7 +115,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Market value\"")
+	@Column(name = "\"Market value\"", nullable = true, precision = 0)
 	public Long getMarketValue()
 	{
 		return marketValue;
@@ -111,18 +124,6 @@ import javax.persistence.*;
 	public void setMarketValue(Long marketValue)
 	{
 		this.marketValue = marketValue;
-	}
-
-	@Id
-	@Column(name =  "\"ID_Employee\"", nullable = false)
-	public long getIdEmployee()
-	{
-		return idEmployee;
-	}
-
-	public void setIdEmployee(long idEmployee)
-	{
-		this.idEmployee = idEmployee;
 	}
 
 	@Override
@@ -167,5 +168,17 @@ import javax.persistence.*;
 		if (isCaptain != null ? !isCaptain.equals(that.isCaptain) : that.isCaptain != null)
 			return false;
 		return marketValue != null ? marketValue.equals(that.marketValue) : that.marketValue == null;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "\"ID_Position\"", referencedColumnName = "\"ID_Position\"", nullable = false)
+	public PositionsOnPitchEntity getPositionsOnPitchByIdPosition()
+	{
+		return positionsOnPitchByIdPosition;
+	}
+
+	public void setPositionsOnPitchByIdPosition(PositionsOnPitchEntity positionsOnPitchByIdPosition)
+	{
+		this.positionsOnPitchByIdPosition = positionsOnPitchByIdPosition;
 	}
 }

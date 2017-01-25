@@ -8,12 +8,13 @@
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521:pannadatabas</property>
         <property name="connection.username">SYSTEM</property>
         <property name="connection.password">panna</property>
+
         <property name="hibernate.default_schema">SYSTEM</property>
         <property name="show_sql">true</property>
 
-        <mapping class="database.models.AddressesEntity"/>
         <mapping class="database.models.ContractsEntity"/>
         <mapping class="database.models.CountriesEntity"/>
+        <mapping class="database.models.AddressesEntity"/>
         <mapping class="database.models.EmployeesEntity"/>
         <mapping class="database.models.FootbalClubsEntity"/>
         <mapping class="database.models.MatchTypesEntity"/>
@@ -26,6 +27,7 @@
         <mapping class="database.models.SportFacilitiesEntity"/>
         <mapping class="database.models.TrophiesEntity"/>
         <mapping class="database.models.MatchOverviewsEntity"/>
+        <mapping class="database.models.PositionsOnPitchEntity"/>
 
         <!-- DB schema will be updated if needed -->
 

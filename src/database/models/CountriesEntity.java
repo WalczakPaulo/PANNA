@@ -12,7 +12,7 @@ import javax.persistence.*;
 	private String shortName;
 
 	@Id
-	@Column(name = "\"ID_Country\"", nullable = false)
+	@Column(name = "\"ID_Country\"", nullable = false, precision = 0)
 	public long getIdCountry()
 	{
 		return idCountry;

@@ -3,17 +3,18 @@ package database.models;
 import javax.persistence.*;
 
 /**
- * Created by Antoni Rozanski on 23.01.2017.
+ * Created by Antoni Rozanski on 25.01.2017.
  */
-@Entity @Table(name =  "\"Addresses\"", schema = "SYSTEM") public class AddressesEntity
+@Entity @Table(name = "\"Addresses\"", schema = "SYSTEM") public class AddressesEntity
 {
 	private long idAddress;
 	private String city;
 	private String street;
 	private String postalCode;
+	private CountriesEntity countriesByIdCountry;
 
 	@Id
-	@Column(name =  "\"ID_Address\"", nullable = false)
+	@Column(name = "\"ID_Address\"", nullable = false, precision = 0)
 	public long getIdAddress()
 	{
 		return idAddress;
@@ -25,7 +26,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"City\"", nullable = false, length = 30)
+	@Column(name = "\"City\"", nullable = false, length = 30)
 	public String getCity()
 	{
 		return city;
@@ -37,7 +38,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Street\"", nullable = false, length = 30)
+	@Column(name = "\"Street\"", nullable = false, length = 30)
 	public String getStreet()
 	{
 		return street;
@@ -49,7 +50,7 @@ import javax.persistence.*;
 	}
 
 	@Basic
-	@Column(name =  "\"Postal code\"", nullable = false, length = 5)
+	@Column(name = "\"Postal code\"", nullable = false, length = 5)
 	public String getPostalCode()
 	{
 		return postalCode;
@@ -58,16 +59,6 @@ import javax.persistence.*;
 	public void setPostalCode(String postalCode)
 	{
 		this.postalCode = postalCode;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = (int) (idAddress ^ (idAddress >>> 32));
-		result = 31 * result + (city != null ? city.hashCode() : 0);
-		result = 31 * result + (street != null ? street.hashCode() : 0);
-		result = 31 * result + (postalCode != null ? postalCode.hashCode() : 0);
-		return result;
 	}
 
 	@Override
@@ -86,6 +77,31 @@ import javax.persistence.*;
 			return false;
 		if (street != null ? !street.equals(that.street) : that.street != null)
 			return false;
-		return postalCode != null ? postalCode.equals(that.postalCode) : that.postalCode == null;
+		if (postalCode != null ? !postalCode.equals(that.postalCode) : that.postalCode != null)
+			return false;
+
+		return true;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = (int) (idAddress ^ (idAddress >>> 32));
+		result = 31 * result + (city != null ? city.hashCode() : 0);
+		result = 31 * result + (street != null ? street.hashCode() : 0);
+		result = 31 * result + (postalCode != null ? postalCode.hashCode() : 0);
+		return result;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "\"ID_Country\"", referencedColumnName = "\"ID_Country\"", nullable = false)
+	public CountriesEntity getCountriesByIdCountry()
+	{
+		return countriesByIdCountry;
+	}
+
+	public void setCountriesByIdCountry(CountriesEntity countriesByIdCountry)
+	{
+		this.countriesByIdCountry = countriesByIdCountry;
 	}
 }
