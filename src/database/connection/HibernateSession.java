@@ -36,8 +36,12 @@ public class HibernateSession
 		return instance;
 	}
 
-	protected static Session getSession() throws HibernateException
+	protected static Session openSession() throws HibernateException
 	{
 		return getInstance().sessionFactory.openSession();
+	}
+	protected static Session getSession() throws HibernateException
+	{
+		return getInstance().sessionFactory.getCurrentSession();
 	}
 }

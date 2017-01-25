@@ -15,4 +15,8 @@ public class Constants
 	public static final String DEFAULT_EXCEPTION_MESSAGE = "Unexpected problem has occurred!";
 	public static final String DEFAULT_EXCEPTION_TITLE = "Operation failed";
 	public static final String LOGIN_FAILED_EXCEPTION_TITLE = "Login failed!";
+	public static final String QUERY_SELECT = " select ";
+	public static final String QUERY_FROM = " from ";
+	public static final String QUERY_WHERE = " where ";
+	public static final String QUERY_LIKE = " like ";
 }

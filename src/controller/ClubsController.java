@@ -1,22 +1,31 @@
 package controller;
 
-import database.connection.EntityListSupplier;
+import database.connection.DataSearcher;
 import database.models.FootbalClubsEntity;
+import database.query.ClubsNamePatternQuerySupplier;
+import database.query.QuerySupplier;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
  * Created by Antoni Rozanski on 23.01.2017.
  */
 public class ClubsController implements Initializable
+
 {
+	@FXML private TextField clubNameSearchField;
+
+	@FXML private ComboBox<String> clubCountrySelectBox;
+
+	@FXML private DatePicker clubCreationDatePicker;
+
 	@FXML private TableView<?> clubsBrowserTable;
 
 	@FXML private TableColumn<FootbalClubsEntity, Integer> clubsBrowserColumnId;
@@ -34,15 +43,33 @@ public class ClubsController implements Initializable
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
+		initializeTable();
+
+	}
+
+	private void initializeTable()
+	{
 		clubsBrowserColumnId.setCellValueFactory(new PropertyValueFactory<>("IdClub"));
 		clubsBrowserColumnName.setCellValueFactory(new PropertyValueFactory<>("clubName"));
 		clubsBrowserColumnNickname.setCellValueFactory(new PropertyValueFactory<>("Nickname"));
 		clubsBrowserColumnDate.setCellValueFactory(new PropertyValueFactory<>("CreationDate"));
 		clubsBrowserColumnNIP.setCellValueFactory(new PropertyValueFactory<>("NIP"));
 		clubsBrowserColumnREGON.setCellValueFactory(new PropertyValueFactory<>("REGON"));
-		ObservableList list = EntityListSupplier.obtainDatabaseTable(FootbalClubsEntity.class);
+		ObservableList list = DataSearcher.obtainWholeDatabaseTable(FootbalClubsEntity.class);
 		clubsBrowserTable.setItems(list);
-
 	}
+
+	@FXML
+	void searchForClub()
+	{
+		QuerySupplier clubsNameQuerySupplier =
+				new ClubsNamePatternQuerySupplier(clubNameSearchField.getText());
+		String query = clubsNameQuerySupplier.supplyQuery();
+		Map params = clubsNameQuerySupplier.supplyParams();
+
+		ObservableList list = DataSearcher.obtainDatabaseDataForQuery(query, params);
+		clubsBrowserTable.setItems(list);
+	}
+
 }
 
