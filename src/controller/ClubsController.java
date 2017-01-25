@@ -11,7 +11,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -62,12 +61,10 @@ public class ClubsController implements Initializable
 	@FXML
 	void searchForClub()
 	{
-		QuerySupplier clubsNameQuerySupplier =
-				new ClubsNamePatternQuerySupplier(clubNameSearchField.getText());
-		String query = clubsNameQuerySupplier.supplyQuery();
-		Map params = clubsNameQuerySupplier.supplyParams();
+		QuerySupplier querySupplier = new ClubsNamePatternQuerySupplier(clubNameSearchField.getText());
 
-		ObservableList list = DataSearcher.obtainDatabaseDataForQuery(query, params);
+		ObservableList list = DataSearcher
+				.obtainDatabaseDataForQuery(querySupplier.supplyQuery(), querySupplier.supplyParams());
 		clubsBrowserTable.setItems(list);
 	}
 
