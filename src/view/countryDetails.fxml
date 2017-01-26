@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0"
@@ -49,9 +49,37 @@
         <VBox alignment="TOP_CENTER" prefHeight="309.0" prefWidth="132.0" spacing="30.0"
               BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="countryId" editable="false" prefHeight="25.0" prefWidth="130.0"/>
-                <TextField fx:id="countryName"/>
-                <TextField fx:id="countryCode"/>
+                <TextField fx:id="countryId" disable="true" editable="false" prefHeight="25.0"
+                           prefWidth="130.0">
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="1.23" specularConstant="0.0"
+                                  specularExponent="0.0" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant azimuth="61.74" color="#bac9d7" elevation="103.6"/>
+                            </light>
+                        </Lighting>
+                    </effect>
+                </TextField>
+                <TextField fx:id="countryName" text="dsadasda">
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="1.23" specularConstant="0.0"
+                                  specularExponent="0.0" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant azimuth="61.74" color="#bac9d7" elevation="103.6"/>
+                            </light>
+                        </Lighting>
+                    </effect>
+                </TextField>
+                <TextField fx:id="countryCode">
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="1.23" specularConstant="0.0"
+                                  specularExponent="0.0" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant azimuth="61.74" color="#bac9d7" elevation="103.6"/>
+                            </light>
+                        </Lighting>
+                    </effect>
+                </TextField>
             </children>
             <opaqueInsets>
                 <Insets/>

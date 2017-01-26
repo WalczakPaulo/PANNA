@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import model.PannaValidateException;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -17,7 +18,23 @@ public class Helper
 	public static void showExceptionAlertDialog(Exception e, String title)
 	{
 		Alert alert = new Alert(Alert.AlertType.ERROR);
+		showAlertDialog(e, title, alert);
+	}
 
+	public static void showExceptionAlertDialog(Exception e)
+	{
+		Alert alert = new Alert(Alert.AlertType.ERROR);
+		showAlertDialog(e, Constants.DEFAULT_EXCEPTION_TITLE, alert);
+	}
+
+	public static void showInfoAlertDialog(PannaValidateException ex, String title)
+	{
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		showAlertDialog(ex, title, alert);
+	}
+
+	private static void showAlertDialog(Exception e, String title, Alert alert)
+	{
 		alert.setTitle(title);
 		alert.setHeaderText(null);
 		alert.setContentText(e.getMessage());
@@ -58,4 +75,5 @@ public class Helper
 		e.printStackTrace(pw);
 		return sw.toString();
 	}
+
 }

@@ -18,6 +18,7 @@ import model.TableActionData;
 import utils.Constants;
 import utils.Helper;
 
+import javax.xml.bind.ValidationException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -89,6 +90,7 @@ public class CountriesController implements Initializable
 		}
 		catch (IOException e)
 		{
+
 			Helper.showDefaultExceptionAlertDialog(e);
 		}
 		return false;
@@ -134,8 +136,16 @@ public class CountriesController implements Initializable
 		TableActionData data = new TableActionData(Constants.ACTION_DELETE, selectedCountry);
 		if (showCountryPopup(data))
 		{
-			DataSearcher.delete((CountriesEntity) data.getTableObject());
-			refreshTable();
+			try
+			{
+				DataSearcher.delete((CountriesEntity) data.getTableObject());
+				refreshTable();
+			}
+			catch (RuntimeException ex)
+			{
+				Helper.showExceptionAlertDialog(
+						new ValidationException(Constants.CONSTRAINTS_EXIST_VALIDATE_WARNING));
+			}
 		}
 	}
 

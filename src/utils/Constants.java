@@ -30,4 +30,12 @@ public class Constants
 	public static final int ACTION_DELETE = 666;
 	public static final String COUNTRIES_SEQ = "Countries_seq";
 
+	public static final String FIELDS_MUST_BE_FILLED_VALIDATE_WARNING =
+			"Please provide value to all fields with blue background.";
+	public static final String COUNTRY_CODE_TOO_LONG_VALIDATE_WARNING =
+			"Country code must be no longer than 3 characters.";
+	public static final String COUNTRY_NAME_TOO_LONG_VALIDATE_WARNING =
+			"Country name must be no longer than 30 characters.";
+	public static final String CONSTRAINTS_EXIST_VALIDATE_WARNING =
+			"This record can't be deleted - some other instances are using it.";
 }

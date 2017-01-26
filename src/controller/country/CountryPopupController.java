@@ -6,8 +6,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.CountryValidator;
+import model.PannaValidateException;
 import model.TableActionData;
+import model.Validator;
 import utils.Constants;
+import utils.Helper;
 
 /**
  * Created by Antoni Rozanski on 26.01.2017.
@@ -31,13 +35,33 @@ public class CountryPopupController
 	}
 
 	@FXML
-	void accept(ActionEvent event)
+	void accept(ActionEvent event) throws PannaValidateException
 	{
+		Validator val = new CountryValidator();
+		try
+		{
+			val.tryValidate(prepareEntityWithFieldsToCheck());
+		}
+		catch (PannaValidateException ex)
+		{
+			Helper.showInfoAlertDialog(ex, "Action failed");
+			return;
+		}
+		country.setIdCountry(Long.parseLong(countryId.getText()));
+		country.setFullName(countryName.getText().trim());
+		country.setShortName(countryCode.getText().trim().toUpperCase());
+		isOk = true;
+		stage.close();
+	}
+
+	private CountriesEntity prepareEntityWithFieldsToCheck()
+	{
+		CountriesEntity country = new CountriesEntity();
 		country.setIdCountry(Long.parseLong(countryId.getText()));
 		country.setFullName(countryName.getText());
 		country.setShortName(countryCode.getText());
-		isOk = true;
-		stage.close();
+		return country;
+
 	}
 
 	@FXML
