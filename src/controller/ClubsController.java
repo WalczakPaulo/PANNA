@@ -37,8 +37,17 @@ public class ClubsController extends EntityTableViewController implements Initia
 
 		initializeTable();
 		initializeUserSpecificFeatures();
+		initializeCountriesSelectBox();
 	}
 
+	private void initializeCountriesSelectBox()
+	{
+		QuerySupplier querySupplier = new CountriesNamesQuerySupplier();
+		ObservableList list = DataSearcher
+				.obtainDatabaseDataForQuery(querySupplier.supplyQuery(), querySupplier.supplyParams());
+		list.add(0, "No country selected");
+		clubCountrySelectBox.setItems(list);
+	}
 
 	private void initializeTable()
 	{

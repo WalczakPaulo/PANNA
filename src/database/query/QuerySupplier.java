@@ -1,5 +1,6 @@
 package database.query;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -7,7 +8,19 @@ import java.util.Map;
  */
 public abstract class QuerySupplier
 {
+	protected final String className;
+
+	protected QuerySupplier(String className)
+	{
+		this.className = className;
+	}
+
 	public abstract String supplyQuery();
 
-	public abstract Map supplyParams();
+	public Map supplyParams()
+	{
+		return new HashMap();
+	}
+
+	;
 }

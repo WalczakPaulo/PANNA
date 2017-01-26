@@ -11,12 +11,13 @@ import java.util.Map;
  */
 public class ClubsNamePatternQuerySupplier extends QuerySupplier
 {
-	String className = FootbalClubsEntity.class.getName();
+
 	String pattern;
 	String searchField = "clubName";
 
 	public ClubsNamePatternQuerySupplier(String pattern)
 	{
+		super(FootbalClubsEntity.class.getName());
 		this.pattern = pattern;
 	}
 
