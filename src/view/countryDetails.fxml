@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0"
+            prefWidth="286.0" xmlns="http://javafx.com/javafx/8.0.102"
+            fx:controller="controller.country.CountryPopupController">
+    <top>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+            <children>
+                <Label prefHeight="2.0" prefWidth="150.0" text="Country Details">
+                    <font>
+                        <Font size="21.0"/>
+                    </font>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                </Label>
+                <Separator prefHeight="19.0" prefWidth="226.0"/>
+            </children>
+        </VBox>
+    </top>
+    <left>
+        <VBox alignment="TOP_RIGHT" prefHeight="309.0" prefWidth="68.0" spacing="40.0"
+              BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Id"/>
+                <Label text="Name"/>
+                <Label text="Code"/>
+            </children>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+            <padding>
+                <Insets top="20.0"/>
+            </padding>
+        </VBox>
+    </left>
+    <right>
+        <VBox alignment="TOP_CENTER" prefHeight="309.0" prefWidth="132.0" spacing="30.0"
+              BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="countryId" editable="false" prefHeight="25.0" prefWidth="130.0"/>
+                <TextField fx:id="countryName"/>
+                <TextField fx:id="countryCode"/>
+            </children>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <padding>
+                <Insets top="20.0"/>
+            </padding>
+        </VBox>
+    </right>
+    <opaqueInsets>
+        <Insets/>
+    </opaqueInsets>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="40.0" top="20.0"/>
+    </padding>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="20.0" BorderPane.alignment="BOTTOM_RIGHT">
+            <children>
+                <Button fx:id="acceptButton" mnemonicParsing="false" onAction="#accept" text="Accept"/>
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel" text="Cancel"/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
