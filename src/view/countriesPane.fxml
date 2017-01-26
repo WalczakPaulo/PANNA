@@ -15,9 +15,9 @@
     <top>
         <ToolBar prefHeight="45.0" prefWidth="1051.0" BorderPane.alignment="CENTER">
             <items>
-                <Button mnemonicParsing="false" onAction="#addCountry" text="Add" textFill="#01b555" />
-                <Button mnemonicParsing="false" onAction="#removeCountry" text="Remove" textFill="#ab0505" />
-                <Button mnemonicParsing="false" onAction="#modifyCountry" text="Modify" />
+                <Button fx:id="addCountryButton" mnemonicParsing="false" onAction="#addCountry" text="Add" textFill="#01b555" />
+                <Button fx:id="removeCountryButton" mnemonicParsing="false" onAction="#removeCountry" text="Remove" textFill="#ab0505" />
+                <Button fx:id="modifyCountryButton" mnemonicParsing="false" onAction="#modifyCountry" text="Modify" />
                 <BorderPane prefHeight="35.0" prefWidth="838.0">
                     <center>
                         <Label prefHeight="35.0" prefWidth="220.0" text="Countries" BorderPane.alignment="CENTER">

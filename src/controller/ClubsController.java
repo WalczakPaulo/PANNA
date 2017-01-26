@@ -17,35 +17,28 @@ import java.util.ResourceBundle;
 /**
  * Created by Antoni Rozanski on 23.01.2017.
  */
-public class ClubsController implements Initializable
+public class ClubsController extends EntityTableViewController implements Initializable
 
 {
 	@FXML private TextField clubNameSearchField;
-
 	@FXML private ComboBox<String> clubCountrySelectBox;
-
 	@FXML private DatePicker clubCreationDatePicker;
-
 	@FXML private TableView<?> clubsBrowserTable;
-
 	@FXML private TableColumn<FootbalClubsEntity, Integer> clubsBrowserColumnId;
-
 	@FXML private TableColumn<FootbalClubsEntity, String> clubsBrowserColumnName;
-
 	@FXML private TableColumn<FootbalClubsEntity, String> clubsBrowserColumnNickname;
-
 	@FXML private TableColumn<FootbalClubsEntity, String> clubsBrowserColumnDate;
-
 	@FXML private TableColumn<FootbalClubsEntity, String> clubsBrowserColumnNIP;
-
 	@FXML private TableColumn<FootbalClubsEntity, String> clubsBrowserColumnREGON;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
-		initializeTable();
 
+		initializeTable();
+		initializeUserSpecificFeatures();
 	}
+
 
 	private void initializeTable()
 	{

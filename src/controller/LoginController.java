@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import model.CredentialsValidator;
 import model.PannaLoginException;
 import model.UserData;
+import utils.Configuration;
 import utils.Constants;
 import utils.Helper;
 
@@ -44,6 +45,7 @@ public class LoginController implements Initializable
 		try
 		{
 			UserData data = validator.tryValidate(loginField.getText(), passwordField.getText());
+			Configuration.getInstance().setUserData(data);
 			openAppForUser(data);
 			closeLoginWindow();
 

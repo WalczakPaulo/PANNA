@@ -56,9 +56,9 @@
             <top>
                 <ToolBar prefHeight="45.0" prefWidth="1051.0" BorderPane.alignment="CENTER">
                     <items>
-                        <Button mnemonicParsing="false" text="Add" textFill="#01b555" />
-                        <Button mnemonicParsing="false" text="Remove" textFill="#ab0505" />
-                        <Button mnemonicParsing="false" text="Modify" />
+                        <Button fx:id="addCountryButton" mnemonicParsing="false" text="Add" textFill="#01b555" />
+                        <Button fx:id="removeCountryButton" mnemonicParsing="false" text="Remove" textFill="#ab0505" />
+                        <Button fx:id="modifyCountryButton" mnemonicParsing="false" text="Modify" />
                         <BorderPane maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="873.0">
                             <center>
                                 <Label prefHeight="35.0" prefWidth="279.0" text="Football Clubs" BorderPane.alignment="CENTER">

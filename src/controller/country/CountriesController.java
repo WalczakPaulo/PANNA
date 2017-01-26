@@ -1,5 +1,6 @@
 package controller.country;
 
+import controller.EntityTableViewController;
 import database.connection.DataSearcher;
 import database.models.CountriesEntity;
 import javafx.collections.ObservableList;
@@ -27,19 +28,17 @@ import java.util.ResourceBundle;
  * Created by Antoni Rozanski on 25.01.2017.
  */
 
-public class CountriesController implements Initializable
+public class CountriesController extends EntityTableViewController implements Initializable
 {
 	@FXML private TableView<?> countriesBrowserTable;
-
 	@FXML private TableColumn<CountriesEntity, String> countriesBrowserId;
-
 	@FXML private TableColumn<CountriesEntity, String> countriesBrowserName;
-
 	@FXML private TableColumn<CountriesEntity, String> countriesBrowserCode;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
+		initializeUserSpecificFeatures();
 		initializeTable();
 
 	}
