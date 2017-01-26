@@ -22,7 +22,6 @@ import java.util.ResourceBundle;
 public class ClubsController extends EntityTableViewController implements Initializable
 
 {
-	String lastCountry = Constants.CLUBS_PANE_NO_COUNTRY_SELECTED;
 	@FXML private TextField clubNameSearchField;
 	@FXML private ComboBox<String> clubCountrySelectBox;
 	@FXML private DatePicker clubCreationDatePicker;
@@ -78,9 +77,8 @@ public class ClubsController extends EntityTableViewController implements Initia
 	void findClubsFromCountry(ActionEvent event)
 	{
 		String selectedCountry = clubCountrySelectBox.getSelectionModel().getSelectedItem();
-		if (selectedCountry == null || selectedCountry.equals(lastCountry))
+		if (selectedCountry == null)
 			return;
-		lastCountry = selectedCountry;
 		findClubsFromGivenCountry(selectedCountry);
 
 	}
