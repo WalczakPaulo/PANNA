@@ -63,6 +63,7 @@ public class CountryPopupController
 
 	private void initFields(int action)
 	{
+		cancelButton.requestFocus();
 		if (action == Constants.ACTION_VIEW)
 			initActionView();
 		if (action == Constants.ACTION_INSERT)
@@ -90,6 +91,7 @@ public class CountryPopupController
 	{
 		stage.setTitle("Add new country");
 		acceptButton.setText("Add");
+
 	}
 
 	private void initActionView()
