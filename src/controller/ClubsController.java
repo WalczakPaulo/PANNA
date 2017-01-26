@@ -64,7 +64,7 @@ public class ClubsController extends EntityTableViewController implements Initia
 	}
 
 	@FXML
-	void searchForClub()
+	void searchForClubByName()
 	{
 		QuerySupplier querySupplier = new ClubsNamePatternQuerySupplier(clubNameSearchField.getText());
 
