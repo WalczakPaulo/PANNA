@@ -40,8 +40,14 @@ public class HibernateSession
 	{
 		return getInstance().sessionFactory.openSession();
 	}
+
 	protected static Session getSession() throws HibernateException
 	{
 		return getInstance().sessionFactory.getCurrentSession();
+	}
+
+	public static void close()
+	{
+		getInstance().sessionFactory.close();
 	}
 }

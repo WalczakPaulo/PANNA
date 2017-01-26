@@ -1,5 +1,6 @@
 package controller;
 
+import database.connection.HibernateSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -81,6 +82,8 @@ public class LoginController implements Initializable
 		stage.setResizable(false);
 		stage.setTitle(Constants.DEFUALT_TITLE + data.getLogin());
 		stage.show();
+		stage.setOnCloseRequest(we -> HibernateSession.close());
+
 	}
 
 	@Override
