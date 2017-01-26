@@ -10,6 +10,8 @@ public class CredentialsValidator
 
 	public UserData tryValidate(String login, String password) throws PannaLoginException
 	{
+		login = login.trim();
+		password = password.trim();
 		if (login.equals("") || password.equals(""))
 			throw new PannaLoginException(Constants.EMPTY_LOGIN_PASS_EXCEPTION_MESSAGE);
 		if (login.equals(Constants.DEMO_VERSION_LOGIN) && password.equals(Constants.DEMO_VERSION_PASSWORD))
