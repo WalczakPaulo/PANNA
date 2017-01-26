@@ -21,4 +21,13 @@ public class Constants
 	public static final String QUERY_LIKE = " like ";
 	public static final String QUERY_ORDER_BY = " order by ";
 	public static final String QUERY_ASC = " asc ";
+	public static final int WINDOW_WITH_NO_OPTIONS_SIZE = 1000;
+	public static final int WINDOW_WITH_OPTIONS_SIZE = 1300;
+	public static final String DEFUALT_TITLE = "Panna Football Analytics App: ";
+	public static final int ACTION_VIEW = 1;
+	public static final int ACTION_INSERT = 2;
+	public static final int ACTION_MODIFY = 3;
+	public static final int ACTION_DELETE = 666;
+	public static final String COUNTRIES_SEQ = "Countries_seq";
+
 }

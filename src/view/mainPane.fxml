@@ -5,21 +5,31 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
+
 <BorderPane xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
-   <top>
-        <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
-            <menus>
-                <Menu fx:id="clubsMenu" mnemonicParsing="false" text="Clubs">
+   <center>
+      <BorderPane fx:id="mainBorderPane">
+         <top>
+              <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                  <menus>
+                      <Menu fx:id="clubsMenu" mnemonicParsing="false" text="Clubs">
+                          <items>
+                              <MenuItem fx:id="clubsMenuItem" mnemonicParsing="false" onAction="#openClubsBrowser" text="Open" />
+                          </items>
+                      </Menu>
+                  <Menu fx:id="CountriesMenu" mnemonicParsing="false" text="Countries">
                     <items>
-                        <MenuItem fx:id="clubsMenuItem" mnemonicParsing="false" onAction="#openClubsBrowser" text="Close" />
+                      <MenuItem mnemonicParsing="false" onAction="#openCountriesBrowser" text="Open" />
                     </items>
-                </Menu>
-                <Menu fx:id="AddressesMenu" mnemonicParsing="false" text="Addresses">
-                    <items>
-                        <MenuItem fx:id="addressesMenuItem" mnemonicParsing="false" onAction="#openAddressesBrowser" text="Open browser" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-   </top>
+                  </Menu>
+                      <Menu fx:id="AddressesMenu" mnemonicParsing="false" text="Addresses">
+                          <items>
+                              <MenuItem fx:id="addressesMenuItem" mnemonicParsing="false" onAction="#openAddressesBrowser" text="Open" />
+                          </items>
+                      </Menu>
+                  </menus>
+              </MenuBar>
+         </top>
+      </BorderPane>
+   </center>
 </BorderPane>

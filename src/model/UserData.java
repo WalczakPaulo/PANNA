@@ -13,4 +13,9 @@ public abstract class UserData
 	}
 
 	public abstract boolean isFullVersion();
+
+	public String getLogin()
+	{
+		return login;
+	}
 }

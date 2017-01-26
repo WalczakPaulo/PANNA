@@ -75,8 +75,9 @@ public class LoginController implements Initializable
 
 		SplitPane clubsPane;
 		clubsPane = FXMLLoader.load(this.getClass().getResource("/view/footballClubsPane.fxml"));
-		root.setCenter(clubsPane);
+		((BorderPane) root.getCenter()).setCenter(clubsPane);
 		stage.setResizable(false);
+		stage.setTitle(Constants.DEFUALT_TITLE + data.getLogin());
 		stage.show();
 	}
 
