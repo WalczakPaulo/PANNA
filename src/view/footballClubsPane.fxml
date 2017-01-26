@@ -30,7 +30,7 @@
                     </VBox.margin>
                 </TextField>
                 <Label text="Select club's country:" />
-                <ComboBox fx:id="clubCountrySelectBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#searchClubsForCountry" promptText="No country selected">
+                <ComboBox fx:id="clubCountrySelectBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#findClubsFromCountry" promptText="No country selected">
                     <VBox.margin>
                         <Insets bottom="50.0" />
                     </VBox.margin>

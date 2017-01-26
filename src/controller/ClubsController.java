@@ -2,14 +2,16 @@ package controller;
 
 import database.connection.DataSearcher;
 import database.models.FootbalClubsEntity;
+import database.query.ClubsFromCountryQuerySupplier;
 import database.query.ClubsNamePatternQuerySupplier;
 import database.query.QuerySupplier;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+import utils.Constants;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +22,7 @@ import java.util.ResourceBundle;
 public class ClubsController extends EntityTableViewController implements Initializable
 
 {
+	String lastCountry = Constants.CLUBS_PANE_NO_COUNTRY_SELECTED;
 	@FXML private TextField clubNameSearchField;
 	@FXML private ComboBox<String> clubCountrySelectBox;
 	@FXML private DatePicker clubCreationDatePicker;
@@ -45,7 +48,7 @@ public class ClubsController extends EntityTableViewController implements Initia
 		QuerySupplier querySupplier = new CountriesNamesQuerySupplier();
 		ObservableList list = DataSearcher
 				.obtainDatabaseDataForQuery(querySupplier.supplyQuery(), querySupplier.supplyParams());
-		list.add(0, "No country selected");
+		list.add(0, Constants.CLUBS_PANE_NO_COUNTRY_SELECTED);
 		clubCountrySelectBox.setItems(list);
 	}
 
@@ -71,8 +74,31 @@ public class ClubsController extends EntityTableViewController implements Initia
 		clubsBrowserTable.setItems(list);
 	}
 
-	public void searchClubsForCountry(MouseEvent mouseEvent)
+	@FXML
+	void findClubsFromCountry(ActionEvent event)
 	{
+		String selectedCountry = clubCountrySelectBox.getSelectionModel().getSelectedItem();
+		if (selectedCountry == null || selectedCountry.equals(lastCountry))
+			return;
+		lastCountry = selectedCountry;
+		findClubsFromGivenCountry(selectedCountry);
+
+	}
+
+	private void findClubsFromGivenCountry(String selectedCountry)
+	{
+		if (selectedCountry.equals(Constants.CLUBS_PANE_NO_COUNTRY_SELECTED))
+		{
+			ObservableList list = DataSearcher.obtainWholeDatabaseTable(FootbalClubsEntity.class);
+			clubsBrowserTable.setItems(list);
+		}
+		else
+		{
+			QuerySupplier querySupplier = new ClubsFromCountryQuerySupplier(selectedCountry);
+			ObservableList list = DataSearcher
+					.obtainDatabaseDataForQuery(querySupplier.supplyQuery(), querySupplier.supplyParams());
+			clubsBrowserTable.setItems(list);
+		}
 	}
 }
 

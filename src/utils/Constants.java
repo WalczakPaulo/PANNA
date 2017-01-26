@@ -38,4 +38,5 @@ public class Constants
 			"Country name must be no longer than 30 characters.";
 	public static final String CONSTRAINTS_EXIST_VALIDATE_WARNING =
 			"This record can't be deleted - some other instances are using it.";
+	public static final String CLUBS_PANE_NO_COUNTRY_SELECTED = "No country selected";
 }
