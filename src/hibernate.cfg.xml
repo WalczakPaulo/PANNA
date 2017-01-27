@@ -29,7 +29,5 @@
         <mapping class="database.models.MatchOverviewsEntity"/>
         <mapping class="database.models.PositionsOnPitchEntity"/>
 
-        <!-- DB schema will be updated if needed -->
-
     </session-factory>
 </hibernate-configuration>

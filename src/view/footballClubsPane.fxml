@@ -1,64 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.2171814671814672" prefHeight="679.0"
-           prefWidth="1193.0" xmlns="http://javafx.com/javafx/8.0.102"
-           fx:controller="controller.ClubsController">
+
+<SplitPane dividerPositions="0.2171814671814672" prefHeight="679.0" prefWidth="1193.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClubsController">
     <items>
         <VBox minWidth="-Infinity" prefHeight="685.0" prefWidth="205.0">
             <children>
-                <Label text="Search for club:"/>
-                <TextField fx:id="clubNameSearchField" onKeyReleased="#searchForClubByName"
-                           promptText="Insert any text here">
+                <Label text="Search for club:" />
+                <TextField fx:id="clubNameSearchField" onKeyReleased="#searchForClubByName" promptText="Insert any text here">
                     <VBox.margin>
-                        <Insets bottom="50.0"/>
+                        <Insets bottom="50.0" />
                     </VBox.margin>
                 </TextField>
-                <Label text="Select club's country:"/>
-                <ComboBox fx:id="clubCountrySelectBox" maxHeight="1.7976931348623157E308"
-                          maxWidth="1.7976931348623157E308" onAction="#findClubsFromCountry"
-                          promptText="No country selected">
+                <Label text="Select club's country:" />
+                <ComboBox fx:id="clubCountrySelectBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#findClubsFromCountry" promptText="No country selected">
                     <VBox.margin>
-                        <Insets bottom="50.0"/>
+                        <Insets bottom="50.0" />
                     </VBox.margin>
                     <contextMenu>
                         <ContextMenu>
                             <items>
-                                <MenuItem mnemonicParsing="false" text="Unspecified Action"/>
+                                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
                             </items>
                         </ContextMenu>
                     </contextMenu>
                 </ComboBox>
-                <Label text="Select clubs older than:"/>
-                <DatePicker fx:id="clubCreationDatePicker" maxHeight="1.7976931348623157E308"
-                            maxWidth="1.7976931348623157E308" onAction="#findClubsOlderThan"
-                            promptText="No date specified"/>
+                <Label text="Select clubs older than:" />
+                <DatePicker fx:id="clubCreationDatePicker" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#findClubsOlderThan" promptText="No date specified" />
             </children>
             <padding>
-                <Insets left="20.0" right="20.0" top="50.0"/>
+                <Insets left="20.0" right="20.0" top="50.0" />
             </padding>
             <opaqueInsets>
-                <Insets/>
+                <Insets />
             </opaqueInsets>
         </VBox>
         <BorderPane>
             <top>
                 <ToolBar prefHeight="45.0" prefWidth="1051.0" BorderPane.alignment="CENTER">
                     <items>
-                        <Button fx:id="addCountryButton" mnemonicParsing="false" text="Add"
-                                textFill="#01b555"/>
-                        <Button fx:id="removeCountryButton" mnemonicParsing="false" text="Remove"
-                                textFill="#ab0505"/>
-                        <Button fx:id="modifyCountryButton" mnemonicParsing="false" text="Modify"/>
+                        <Button fx:id="addCountryButton" mnemonicParsing="false" text="Add" textFill="#01b555" />
+                        <Button fx:id="removeCountryButton" mnemonicParsing="false" text="Remove" textFill="#ab0505" />
+                        <Button fx:id="modifyCountryButton" mnemonicParsing="false" text="Modify" />
                         <BorderPane maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="873.0">
                             <center>
-                                <Label prefHeight="35.0" prefWidth="279.0" text="Football Clubs"
-                                       BorderPane.alignment="CENTER">
+                                <Label prefHeight="35.0" prefWidth="373.0" text="Football Clubs" BorderPane.alignment="CENTER">
                                     <font>
-                                        <Font name="System Bold" size="24.0"/>
+                                        <Font name="System Bold" size="24.0" />
                                     </font>
                                 </Label>
                             </center>
@@ -67,30 +72,22 @@
                 </ToolBar>
             </top>
             <left>
-                <GridPane prefHeight="632.0" prefWidth="1058.0" BorderPane.alignment="CENTER"
-                          GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                <GridPane prefHeight="632.0" prefWidth="1058.0" BorderPane.alignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" vgrow="ALWAYS"/>
+                        <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
                     </rowConstraints>
                     <children>
-                        <TableView id="clubsBrowser" fx:id="clubsBrowserTable"
-                                   maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                   prefHeight="632.0" prefWidth="1040.0" tableMenuButtonVisible="true"
-                                   GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <TableView id="clubsBrowser" fx:id="clubsBrowserTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="632.0" prefWidth="1040.0" tableMenuButtonVisible="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                             <columns>
-                                <TableColumn fx:id="clubsBrowserColumnId" prefWidth="50.0" text="ID"/>
-                                <TableColumn fx:id="clubsBrowserColumnName" prefWidth="178.0" text="Name"/>
-                                <TableColumn fx:id="clubsBrowserColumnNickname" prefWidth="289.0"
-                                             text="Nickname"/>
-                                <TableColumn fx:id="clubsBrowserColumnDate" prefWidth="162.0"
-                                             text="Creation Date"/>
-                                <TableColumn fx:id="clubsBrowserColumnNIP" maxWidth="1.7976931348623157E308"
-                                             minWidth="-1.0" prefWidth="165.0" text="NIP"/>
-                                <TableColumn fx:id="clubsBrowserColumnREGON" maxWidth="1.7976931348623157E308"
-                                             prefWidth="200.0" text="REGON"/>
+                                <TableColumn fx:id="clubsBrowserColumnId" prefWidth="50.0" text="ID" />
+                                <TableColumn fx:id="clubsBrowserColumnName" prefWidth="178.0" text="Name" />
+                                <TableColumn fx:id="clubsBrowserColumnNickname" prefWidth="289.0" text="Nickname" />
+                                <TableColumn fx:id="clubsBrowserColumnDate" prefWidth="162.0" text="Creation Date" />
+                                <TableColumn fx:id="clubsBrowserColumnNIP" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="165.0" text="NIP" />
+                                <TableColumn fx:id="clubsBrowserColumnREGON" maxWidth="1.7976931348623157E308" prefWidth="200.0" text="REGON" />
                             </columns>
                         </TableView>
                     </children>

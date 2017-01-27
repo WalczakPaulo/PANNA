@@ -1,25 +1,25 @@
 package database.models;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  * Created by Antoni Rozanski on 23.01.2017.
  */
-@Entity @Table(name =  "\"Footbal clubs\"", schema = "SYSTEM") public class FootbalClubsEntity
+@Entity @Table(name = "\"Footbal clubs\"", schema = "SYSTEM") public class FootbalClubsEntity
 {
 	private long idClub;
 	private String clubName;
 	private String nickname;
 	private String coloration;
 	private String siteAddress;
-	private Date creationDate;
+	private LocalDate creationDate;
 	private Long nip;
 	private Long regon;
 	private AddressesEntity addressesByIdAddress;
 
 	@Id
-	@Column(name =  "\"ID_Club\"", nullable = false)
+	@Column(name = "\"ID_Club\"", nullable = false)
 	public long getIdClub()
 	{
 		return idClub;
@@ -31,7 +31,7 @@ import java.sql.Date;
 	}
 
 	@Basic
-	@Column(name =  "\"Club Name\"", nullable = false, length = 60)
+	@Column(name = "\"Club Name\"", nullable = false, length = 60)
 	public String getClubName()
 	{
 		return clubName;
@@ -43,7 +43,7 @@ import java.sql.Date;
 	}
 
 	@Basic
-	@Column(name =  "\"Nickname\"", nullable = false, length = 30)
+	@Column(name = "\"Nickname\"", nullable = false, length = 30)
 	public String getNickname()
 	{
 		return nickname;
@@ -55,7 +55,7 @@ import java.sql.Date;
 	}
 
 	@Basic
-	@Column(name =  "\"Coloration\"", nullable = false, length = 30)
+	@Column(name = "\"Coloration\"", nullable = false, length = 30)
 	public String getColoration()
 	{
 		return coloration;
@@ -67,7 +67,7 @@ import java.sql.Date;
 	}
 
 	@Basic
-	@Column(name =  "\"Site address\"", length = 256)
+	@Column(name = "\"Site address\"", length = 256)
 	public String getSiteAddress()
 	{
 		return siteAddress;
@@ -79,19 +79,19 @@ import java.sql.Date;
 	}
 
 	@Basic
-	@Column(name =  "\"Creation Date\"")
-	public Date getCreationDate()
+	@Column(name = "\"Creation Date\"")
+	public LocalDate getCreationDate()
 	{
 		return creationDate;
 	}
 
-	public void setCreationDate(Date creationDate)
+	public void setCreationDate(LocalDate creationDate)
 	{
 		this.creationDate = creationDate;
 	}
 
 	@Basic
-	@Column(name =  "\"NIP\"")
+	@Column(name = "\"NIP\"")
 	public Long getNip()
 	{
 		return nip;
@@ -103,7 +103,7 @@ import java.sql.Date;
 	}
 
 	@Basic
-	@Column(name =  "\"REGON\"")
+	@Column(name = "\"REGON\"")
 	public Long getRegon()
 	{
 		return regon;
@@ -156,7 +156,7 @@ import java.sql.Date;
 	}
 
 	@ManyToOne
-	@JoinColumn(name =  "\"ID_Address\"", referencedColumnName =  "\"ID_Address\"", nullable = false)
+	@JoinColumn(name = "\"ID_Address\"", referencedColumnName = "\"ID_Address\"", nullable = false)
 	public AddressesEntity getAddressesByIdAddress()
 	{
 		return addressesByIdAddress;

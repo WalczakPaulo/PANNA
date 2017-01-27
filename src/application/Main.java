@@ -27,6 +27,8 @@ public class Main extends Application
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Panna Football App");
+			primaryStage.setResizable(false);
+			root.setDividerPosition(0, 0.7);
 			primaryStage.show();
 		}
 		catch (Exception e)

@@ -3,6 +3,7 @@ package controller;
 import database.connection.DataSearcher;
 import database.models.FootbalClubsEntity;
 import database.query.ClubsFromCountryQuerySupplier;
+import database.query.ClubsFromDateQuerySupplier;
 import database.query.ClubsNamePatternQuerySupplier;
 import database.query.QuerySupplier;
 import javafx.collections.ObservableList;
@@ -14,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import utils.Constants;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 /**
@@ -22,6 +24,7 @@ import java.util.ResourceBundle;
 public class ClubsController extends EntityTableViewController implements Initializable
 
 {
+	boolean isActionOngoing = false;
 	@FXML private TextField clubNameSearchField;
 	@FXML private ComboBox<String> clubCountrySelectBox;
 	@FXML private DatePicker clubCreationDatePicker;
@@ -57,8 +60,8 @@ public class ClubsController extends EntityTableViewController implements Initia
 		clubsBrowserColumnName.setCellValueFactory(new PropertyValueFactory<>("clubName"));
 		clubsBrowserColumnNickname.setCellValueFactory(new PropertyValueFactory<>("Nickname"));
 		clubsBrowserColumnDate.setCellValueFactory(new PropertyValueFactory<>("CreationDate"));
-		clubsBrowserColumnNIP.setCellValueFactory(new PropertyValueFactory<>("NIP"));
-		clubsBrowserColumnREGON.setCellValueFactory(new PropertyValueFactory<>("REGON"));
+		clubsBrowserColumnNIP.setCellValueFactory(new PropertyValueFactory<>("nip"));
+		clubsBrowserColumnREGON.setCellValueFactory(new PropertyValueFactory<>("regon"));
 		ObservableList list = DataSearcher.obtainWholeDatabaseTable(FootbalClubsEntity.class);
 		clubsBrowserTable.setItems(list);
 	}
@@ -66,21 +69,62 @@ public class ClubsController extends EntityTableViewController implements Initia
 	@FXML
 	void searchForClubByName()
 	{
+		if (isActionOngoing)
+			return;
+		isActionOngoing = true;
+		clubCountrySelectBox.getSelectionModel().clearSelection();
+		clubCreationDatePicker.setValue(null);
 		QuerySupplier querySupplier = new ClubsNamePatternQuerySupplier(clubNameSearchField.getText());
 
 		ObservableList list = DataSearcher
 				.obtainDatabaseDataForQuery(querySupplier.supplyQuery(), querySupplier.supplyParams());
 		clubsBrowserTable.setItems(list);
+		isActionOngoing = false;
 	}
 
 	@FXML
 	void findClubsFromCountry(ActionEvent event)
 	{
+		if (isActionOngoing)
+			return;
+		isActionOngoing = true;
+		clubNameSearchField.clear();
+		clubCreationDatePicker.setValue(null);
 		String selectedCountry = clubCountrySelectBox.getSelectionModel().getSelectedItem();
 		if (selectedCountry == null)
 			return;
 		findClubsFromGivenCountry(selectedCountry);
+		isActionOngoing = false;
+	}
 
+	@FXML
+	void findClubsOlderThan(ActionEvent event)
+	{
+		if (isActionOngoing)
+			return;
+		isActionOngoing = true;
+		clubCountrySelectBox.getSelectionModel().clearSelection();
+		LocalDate date = clubCreationDatePicker.getValue();
+
+		findClubsFromDate(date);
+		clubNameSearchField.clear();
+		isActionOngoing = false;
+	}
+
+	private void findClubsFromDate(LocalDate date)
+	{
+		if (date == null)
+		{
+			ObservableList list = DataSearcher.obtainWholeDatabaseTable(FootbalClubsEntity.class);
+			clubsBrowserTable.setItems(list);
+		}
+		else
+		{
+			QuerySupplier querySupplier = new ClubsFromDateQuerySupplier(date);
+			ObservableList list = DataSearcher
+					.obtainDatabaseDataForQuery(querySupplier.supplyQuery(), querySupplier.supplyParams());
+			clubsBrowserTable.setItems(list);
+		}
 	}
 
 	private void findClubsFromGivenCountry(String selectedCountry)
